@@ -6,8 +6,14 @@ test('Home Page', async ({page}) => {
 
     const pageTitle = page.title();
     console.log('Page title is :', pageTitle);
-    // asdasda
 
-    expect (page).toHaveTitle('STORE');
+    await expect (page).toHaveTitle('STORE');
+
+    const pageURL = page.url();
+    console.log('Page URL is:' ,pageURL);
+
+    await expect(page).toHaveURL('https://www.demoblaze.com/index.html');
+    
+   
 
 })
