@@ -3,6 +3,7 @@
 
 [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
 
+![](https://i.postimg.cc/c4qdRwqX/Screenshot-1.png)
 
 ## Run tests 
 
