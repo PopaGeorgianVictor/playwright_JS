@@ -12,9 +12,16 @@ test('Locators' , async ({page}) => {
     
    //provide username - CSS
    //await page.locator('#loginusername').fill('test')
-   await page.fill('#loginusername')
+   await page.fill('#loginusername','zaheu')
    
    //provide password - CSS
-   await page.fill("input[id='loginpassword']")
+   await page.fill("input[id='loginpassword']",'test123@')
+
+   //Click on login btn
+   await page.click("button[onclick='logIn()']")
+
+   //verify logout link presence
+   const logoutlink = await page.locator("id=logout2")
+   await expect(logoutlink).toBeVisible()
    
 })
