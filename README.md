@@ -15,3 +15,9 @@
 ```py
   npx playwright show-report
 ```
+
+## Run one test / one browser
+
+```py
+  npx playwright mytest.spec.js --project==name of browser (chromium,frefox..)
+```
