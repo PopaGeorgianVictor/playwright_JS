@@ -86,6 +86,16 @@ page.getByTestId() to locate an element based on its data-testid attribute
 ```
 
 
+## Create test using code generator
+
+```py
+
+npx playwright codegen
+
+```
+<img src="https://i.postimg.cc/nrrqGxbr/asda.png">
+
+
 
 
 
