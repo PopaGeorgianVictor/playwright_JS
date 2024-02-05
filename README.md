@@ -3,29 +3,92 @@
 
 [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
 
-![](https://i.postimg.cc/c4qdRwqX/Screenshot-1.png)
-
-<img src="https://i.postimg.cc/zvNF7h7f/elem.png"  width="47%" >
-
-![](https://i.postimg.cc/L5XHc7wB/Screenshot-3.png)
 
 
+## How to Create and Run Playwrite Tests
 
 
-## Run tests 
+### Runs all tests on all browsers in headless mode 
 
 ```py
-  npx playwright test / --headed
+npx playwright test
 ```
 
-## Reports
+### Runs a specific test file
 
 ```py
-  npx playwright show-report
+npx playwright test MyTest.spec.js 
 ```
 
-## Run one test / one browser
+### Runs on specific browser
 
 ```py
-  npx playwright mytest.spec.js --project==name of browser (chromium,frefox..)
+npx playwright test MyTest.spec.js --project=chromium
 ```
+
+```py
+npx playwright test MyTest.psec.js --project=chromium --headed
+```
+
+```py
+npx playwright test MyTest.spec.js --project=chromium --headed --debug
+```
+
+### Locating Elements in Playwright
+
+#### Locate single element
+
+
+##### link/button
+
+```py
+await page. locator('locator').click() await page.click('locator')
+```
+##### inputbox
+
+```py
+await page. locator('locator').fill('value') await page. locator('locator').type('value')
+await page.fill('locator', 'value') await page.type('locator', 'value')
+```
+
+#### Locate multiple web elements
+
+```py
+const elements=await page.$$(locator)
+```
+
+
+## Built-in in locators
+
+```py
+
+page.getByRole() to locate by explicit and implicit accessibility attributes.
+
+```
+```py
+page.getByText() to locate by text content.
+```
+```py
+page.getByLabel() to locate a form control by associated label's text.
+```
+```py
+page.getByPlaceholder() to locate an input by placeholder.
+```
+```py
+page.getByAltText() to locate an element, usually image, by its text alternative.
+```
+```py
+page.getByTitle() to locate an element by its title attribute.
+```
+```py
+page.getByTestId() to locate an element based on its data-testid attribute
+
+```
+
+
+
+
+
+
+
+
