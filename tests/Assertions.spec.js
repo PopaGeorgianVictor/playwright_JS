@@ -31,7 +31,25 @@ test('AssertionTest' , async ({page}) => {
    await expect(checkbox).toBeChecked()
 
    // expect(locator).toHaveAttribute() Element has attribute
+   const regButton = await page.locator('#register-button')
+   await expect(regButton).toHaveAttribute('type','submit')
   
+   // expect(locator).toHaveText() Element matches text
+   await expect(await page.locator('.page-title h1')).toHaveText('Register')
+
+   // expect(locator).toContainText() Element contains text
+   await expect(await page.locator('.page-title h1')).toContainText('Reg')
+
+   // expect(locator).toHaveValue(value) Input has a value
+   const email = await  page.locator('#Email')
+   await email.fill('test@demo.com')
+   await expect(email).toHaveValue('test@demo.com')
+
+   // expect(locator).toHaveCount() List of elements has given length
+   const option = await page.locator('select[name="DateOfBirthMonth"] option')
+   await expect(option).toHaveCount(13)
+
+
 
 
 })
