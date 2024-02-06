@@ -93,8 +93,66 @@ page.getByTestId() to locate an element based on its data-testid attribute
 npx playwright codegen
 
 ```
+
+```py
+
+npx playwright codegen --help
+```
+
+
 <img src="https://i.postimg.cc/nrrqGxbr/asda.png">
 
+
+
+## Assertions
+
+
+```py
+ expect(page).toHaveURL()  Page has URL
+```
+
+```py
+ expect(page).toHaveTitle()  Page has title
+```
+
+```py
+ expect(locator).toBeVisible() Element is visible
+```
+
+```py
+ expect(locator).toBeEnabled()  Control is enabled 
+```
+
+
+```py
+ expect (locator).toBeDisabled()  Element is disabled
+```
+
+
+```py
+ expect(locator).toBeChecked()  Radio/Checkbox is checked
+```
+
+
+```py
+ expect(locator).toHaveAttribute() Element has attribute
+```
+
+```py
+ expect(locator).toHaveText() Element matches text
+```
+
+```py
+ expect(locator).toContainText() Element contains text
+```
+
+```py
+ expect(locator).toHaveValue(value) Input has a value
+```
+
+```py
+ expect(locator).toHaveCount() List of elements has given length
+```
 
 
 
