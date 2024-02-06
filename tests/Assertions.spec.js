@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test'
-import { waitForDebugger } from 'inspector'
+
 
 test('AssertionTest' , async ({page}) => {
     
@@ -41,7 +41,7 @@ test('AssertionTest' , async ({page}) => {
    await expect(await page.locator('.page-title h1')).toContainText('Reg')
 
    // expect(locator).toHaveValue(value) Input has a value
-   const email = await  page.locator('#Email')
+   const email = await page.locator('#Email')
    await email.fill('test@demo.com')
    await expect(email).toHaveValue('test@demo.com')
 
