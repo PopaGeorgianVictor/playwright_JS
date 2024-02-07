@@ -5,9 +5,15 @@ test('SoftAssertions' , async ({page}) => {
 
     await page.goto('https://www.demoblaze.com/index.html')
 
-    //hard assertions - failed assertion will terminate test execution
-    await expect(page).toHaveTitle('STORE1243') 
-    await expect(page).toHaveURL('https://www.demoblaze.com/index.html')
-    await expect(page.locator('#nava')).toBeVisible()
+    // hard assertions - failed assertion will terminate test execution
+    // await expect(page).toHaveTitle('STORE1243') 
+    // await expect(page).toHaveURL('https://www.demoblaze.com/index.html')
+    // await expect(page.locator('#nava')).toBeVisible()
+
+    // soft assertions
+    await expect.soft(page).toHaveTitle('STORE1243') 
+    await expect.soft(page).toHaveURL('https://www.demoblaze.com/index.html')
+    await expect.soft(page.locator('#nava')).toBeVisible()
+    
     
 })
