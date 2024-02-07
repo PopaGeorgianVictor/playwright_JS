@@ -12,5 +12,7 @@ test('handle inputbox' , async ({page}) => {
     await expect(await  page.locator('#name')).toBeEnabled()
 
     await page.locator('#name').fill('test')  // = page.fill('#name','test')
+
+    await page.waitForTimeout(5000) //pausing code
     
 })
