@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test'
 
 
-test('bootstrap dropdowns' , async ({page}) => {
+test('autosugest dropdowns' , async ({page}) => {
 
     await page.goto('https://www.cfrcalatori.ro/')
     await page.locator('#input-station-departure-name').fill('bucu')
