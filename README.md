@@ -155,8 +155,17 @@ npx playwright codegen --help
 ```
 
 
+## Hooks
 
+```py
+ beforeEach: This hook is executed before each individual test
+ afterEach: This hook is executed after each individual test
+```
+```py
+ beforeAll: This hook is executed once before any of the tests start running
+ afterAll: This hook is executed once after all the tests have been run
+```
 
-
+<img src="https://i.postimg.cc/RFSHZdkq/Untitled.png">
 
 
