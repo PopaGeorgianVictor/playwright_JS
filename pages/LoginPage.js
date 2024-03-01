@@ -7,7 +7,7 @@ class LoginPage {
         this.loginLink = "#login2"
         this.usernameInput = '#loginusername'
         this.passwordInput = '#loginpassword'
-        this.loginButton = "'button', { name: 'Log in' }"
+        this.loginButton = page.getByRole( 'button', { name: 'Log in' } )
     }
 
     async gotoLoginPage(){
@@ -18,6 +18,6 @@ class LoginPage {
         await this.page.locator(this.loginLink).click()
         await this.page.locator(this.usernameInput).fill(username)
         await this.page.locator(this.passwordInput).fill(password)
-        await this.page.locator(this.loginButton).click()
+        await this.loginButton.click()
     } 
 }
