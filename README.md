@@ -168,4 +168,8 @@ npx playwright codegen --help
 
 <img src="https://i.postimg.cc/RFSHZdkq/Untitled.png">
 
+## POM
+
+<img src="https://i.postimg.cc/zBGxTgr2/as.png">
+
 
