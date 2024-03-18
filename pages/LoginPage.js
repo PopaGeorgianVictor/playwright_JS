@@ -20,4 +20,4 @@ class LoginPage {
         await this.page.locator(this.passwordInput).fill(password)
         await this.loginButton.click()
     } 
-}
+}aDA
