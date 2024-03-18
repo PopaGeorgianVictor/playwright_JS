@@ -27,7 +27,7 @@ npx playwright test MyTest.spec.js --project=chromium
 ```
 
 ```py
-npx playwright test MyTest.psec.js --project=chromium --headed
+npx playwright test MyTest.spec.js --project=chromium --headed
 ```
 
 ```py
