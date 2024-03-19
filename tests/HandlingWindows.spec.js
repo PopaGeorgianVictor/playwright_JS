@@ -29,10 +29,11 @@ test.only('Handle Multiple Pages/Windows' , async () => {
     await expect(page1).toHaveTitle('OrangeHRM')
 
     const pagePromise = context.waitForEvent('page')
-    await page1.locator('')
+    await page1.getByRole('link', { name: 'OrangeHRM, Inc' }).click()
 
+    const newPage = await pagePromise
+    await expect(newPage).toHaveTitle('Human Resources Management Software | OrangeHRM')
 
-    
 
 
 })
