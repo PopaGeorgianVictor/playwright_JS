@@ -1,5 +1,6 @@
 
 exports.HomePage = class HomePage {
+
 constructor(page) {
     this.page = page
     this.productList ='//*[@id="tbodyid"]/div/div/div/h4/a'
