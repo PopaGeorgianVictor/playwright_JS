@@ -52,34 +52,8 @@
         "outputDir": "C:/Users/victor.popa/Desktop/INFO/PW/playwright_JS/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "id": "chromium",
-        "name": "chromium",
-        "testDir": "C:/Users/victor.popa/Desktop/INFO/PW/playwright_JS/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "C:/Users/victor.popa/Desktop/INFO/PW/playwright_JS/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "id": "firefox",
-        "name": "firefox",
-        "testDir": "C:/Users/victor.popa/Desktop/INFO/PW/playwright_JS/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "C:/Users/victor.popa/Desktop/INFO/PW/playwright_JS/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "id": "webkit",
-        "name": "webkit",
+        "id": "",
+        "name": "",
         "testDir": "C:/Users/victor.popa/Desktop/INFO/PW/playwright_JS/tests",
         "testIgnore": [],
         "testMatch": [
@@ -96,13 +70,13 @@
   },
   "suites": [
     {
-      "title": "Reporters.spec.js",
-      "file": "Reporters.spec.js",
+      "title": "APITest.spec.js",
+      "file": "APITest.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Test1",
+          "title": "Create user",
           "ok": true,
           "tags": [],
           "tests": [
@@ -110,101 +84,41 @@
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "",
+              "projectName": "",
               "results": [
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 881,
+                  "duration": 296,
                   "errors": [],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  name: \u001b[32m'zaheu'\u001b[39m,\n  job: \u001b[32m'vames'\u001b[39m,\n  id: \u001b[32m'548'\u001b[39m,\n  createdAt: \u001b[32m'2024-03-20T19:51:10.093Z'\u001b[39m\n}\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-03-20T18:44:22.931Z",
+                  "startTime": "2024-03-20T19:51:09.840Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "399bcd1299f62012f68d-95434237692cbd161c3b",
-          "file": "Reporters.spec.js",
-          "line": 4,
-          "column": 1
-        },
-        {
-          "title": "Test2",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 794,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-03-20T18:44:24.620Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "399bcd1299f62012f68d-064de90a5d2bda0e3e44",
-          "file": "Reporters.spec.js",
-          "line": 10,
-          "column": 1
-        },
-        {
-          "title": "Test3",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1125,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-03-20T18:44:25.415Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "399bcd1299f62012f68d-6ef640acef5b31d772c8",
-          "file": "Reporters.spec.js",
-          "line": 16,
-          "column": 1
+          "id": "3bac4569f11a28b96434-5ad899a2e90093c9c624",
+          "file": "APITest.spec.js",
+          "line": 13,
+          "column": 6
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-03-20T18:44:22.662Z",
-    "duration": 4041.89,
-    "expected": 3,
+    "startTime": "2024-03-20T19:51:09.550Z",
+    "duration": 599.6759999999999,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
