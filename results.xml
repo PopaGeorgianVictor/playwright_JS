@@ -1,10 +1,10 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="3.664131">
-<testsuite name="Reporters.spec.js" timestamp="2024-03-20T18:15:52.778Z" hostname="chromium" tests="3" failures="0" skipped="0" time="3.115" errors="0">
-<testcase name="Test1" classname="Reporters.spec.js" time="1.875">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="4.02762">
+<testsuite name="Reporters.spec.js" timestamp="2024-03-20T18:44:22.685Z" hostname="chromium" tests="3" failures="0" skipped="0" time="2.8" errors="0">
+<testcase name="Test1" classname="Reporters.spec.js" time="0.881">
 </testcase>
-<testcase name="Test2" classname="Reporters.spec.js" time="0.668">
+<testcase name="Test2" classname="Reporters.spec.js" time="0.794">
 </testcase>
-<testcase name="Test3" classname="Reporters.spec.js" time="0.572">
+<testcase name="Test3" classname="Reporters.spec.js" time="1.125">
 </testcase>
 </testsuite>
 </testsuites>
