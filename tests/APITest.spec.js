@@ -10,7 +10,7 @@ test("Get users", async ({request}) => {
    expect(response.status()).toBe(200)
 })
 
-test.only("Create user", async ({request}) => {
+test("Create user", async ({request}) => {
 
     const response =  await request.post('https://reqres.in/api/users',
                                 {                  
@@ -27,7 +27,20 @@ test.only("Create user", async ({request}) => {
 }) 
  
 test("Update user", async ({request}) => {
+    const response =  await request.put('https://reqres.in/api/users/' + userid,
+                                {                  
+                                data: { "name": "zaheu","job": "qa"  },
+                                headers:{"Accept": "application/json"}
+                            })
+
+    console.log(await response.json())
+    expect(response.status()).toBe(200)
+
+
+                  
 })
 
 test("Delete user", async ({request}) => {
+   const response = await request.delete('https://reqres.in/api/users/' + userid)
+   expect(response.status()).toBe(204)
 })

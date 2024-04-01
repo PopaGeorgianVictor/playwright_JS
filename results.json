@@ -76,6 +76,42 @@
       "line": 0,
       "specs": [
         {
+          "title": "Get users",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 140,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  page: \u001b[33m2\u001b[39m,\n  per_page: \u001b[33m6\u001b[39m,\n  total: \u001b[33m12\u001b[39m,\n  total_pages: \u001b[33m2\u001b[39m,\n  data: [\n    {\n      id: \u001b[33m7\u001b[39m,\n      email: \u001b[32m'michael.lawson@reqres.in'\u001b[39m,\n      first_name: \u001b[32m'Michael'\u001b[39m,\n      last_name: \u001b[32m'Lawson'\u001b[39m,\n      avatar: \u001b[32m'https://reqres.in/img/faces/7-image.jpg'\u001b[39m\n    },\n    {\n      id: \u001b[33m8\u001b[39m,\n      email: \u001b[32m'lindsay.ferguson@reqres.in'\u001b[39m,\n      first_name: \u001b[32m'Lindsay'\u001b[39m,\n      last_name: \u001b[32m'Ferguson'\u001b[39m,\n      avatar: \u001b[32m'https://reqres.in/img/faces/8-image.jpg'\u001b[39m\n    },\n    {\n      id: \u001b[33m9\u001b[39m,\n      email: \u001b[32m'tobias.funke@reqres.in'\u001b[39m,\n      first_name: \u001b[32m'Tobias'\u001b[39m,\n      last_name: \u001b[32m'Funke'\u001b[39m,\n      avatar: \u001b[32m'https://reqres.in/img/faces/9-image.jpg'\u001b[39m\n    },\n    {\n      id: \u001b[33m10\u001b[39m,\n      email: \u001b[32m'byron.fields@reqres.in'\u001b[39m,\n      first_name: \u001b[32m'Byron'\u001b[39m,\n      last_name: \u001b[32m'Fields'\u001b[39m,\n      avatar: \u001b[32m'https://reqres.in/img/faces/10-image.jpg'\u001b[39m\n    },\n    {\n      id: \u001b[33m11\u001b[39m,\n      email: \u001b[32m'george.edwards@reqres.in'\u001b[39m,\n      first_name: \u001b[32m'George'\u001b[39m,\n      last_name: \u001b[32m'Edwards'\u001b[39m,\n      avatar: \u001b[32m'https://reqres.in/img/faces/11-image.jpg'\u001b[39m\n    },\n    {\n      id: \u001b[33m12\u001b[39m,\n      email: \u001b[32m'rachel.howell@reqres.in'\u001b[39m,\n      first_name: \u001b[32m'Rachel'\u001b[39m,\n      last_name: \u001b[32m'Howell'\u001b[39m,\n      avatar: \u001b[32m'https://reqres.in/img/faces/12-image.jpg'\u001b[39m\n    }\n  ],\n  support: {\n    url: \u001b[32m'https://reqres.in/#support-heading'\u001b[39m,\n    text: \u001b[32m'To keep ReqRes free, contributions towards server costs are appreciated!'\u001b[39m\n  }\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-01T16:45:00.669Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bac4569f11a28b96434-0654f46fc390be603c9d",
+          "file": "APITest.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
           "title": "Create user",
           "ok": true,
           "tags": [],
@@ -90,16 +126,16 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 296,
+                  "duration": 224,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "{\n  name: \u001b[32m'zaheu'\u001b[39m,\n  job: \u001b[32m'vames'\u001b[39m,\n  id: \u001b[32m'548'\u001b[39m,\n  createdAt: \u001b[32m'2024-03-20T19:51:10.093Z'\u001b[39m\n}\n"
+                      "text": "{\n  name: \u001b[32m'zaheu'\u001b[39m,\n  job: \u001b[32m'vames'\u001b[39m,\n  id: \u001b[32m'332'\u001b[39m,\n  createdAt: \u001b[32m'2024-04-01T16:45:00.999Z'\u001b[39m\n}\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-03-20T19:51:09.840Z",
+                  "startTime": "2024-04-01T16:45:00.811Z",
                   "attachments": []
                 }
               ],
@@ -109,16 +145,84 @@
           "id": "3bac4569f11a28b96434-5ad899a2e90093c9c624",
           "file": "APITest.spec.js",
           "line": 13,
-          "column": 6
+          "column": 1
+        },
+        {
+          "title": "Update user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 218,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{ name: \u001b[32m'zaheu'\u001b[39m, job: \u001b[32m'qa'\u001b[39m, updatedAt: \u001b[32m'2024-04-01T16:45:01.214Z'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-01T16:45:01.037Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bac4569f11a28b96434-7cecc885609f12597bf3",
+          "file": "APITest.spec.js",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "Delete user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-01T16:45:01.255Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bac4569f11a28b96434-ab7fdcb0fb293d17c046",
+          "file": "APITest.spec.js",
+          "line": 43,
+          "column": 1
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-03-20T19:51:09.550Z",
-    "duration": 599.6759999999999,
-    "expected": 1,
+    "startTime": "2024-04-01T16:45:00.314Z",
+    "duration": 1141.8449999999998,
+    "expected": 4,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

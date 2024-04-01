@@ -1,15 +1,82 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="0.554288">
-<testsuite name="APITest.spec.js" timestamp="2024-03-20T19:51:09.605Z" hostname="" tests="1" failures="0" skipped="0" time="0.296" errors="0">
-<testcase name="Create user" classname="APITest.spec.js" time="0.296">
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="1.0959660000000002">
+<testsuite name="APITest.spec.js" timestamp="2024-04-01T16:45:00.377Z" hostname="" tests="4" failures="0" skipped="0" time="0.758" errors="0">
+<testcase name="Get users" classname="APITest.spec.js" time="0.14">
+<system-out>
+<![CDATA[{
+  page: [33m2[39m,
+  per_page: [33m6[39m,
+  total: [33m12[39m,
+  total_pages: [33m2[39m,
+  data: [
+    {
+      id: [33m7[39m,
+      email: [32m'michael.lawson@reqres.in'[39m,
+      first_name: [32m'Michael'[39m,
+      last_name: [32m'Lawson'[39m,
+      avatar: [32m'https://reqres.in/img/faces/7-image.jpg'[39m
+    },
+    {
+      id: [33m8[39m,
+      email: [32m'lindsay.ferguson@reqres.in'[39m,
+      first_name: [32m'Lindsay'[39m,
+      last_name: [32m'Ferguson'[39m,
+      avatar: [32m'https://reqres.in/img/faces/8-image.jpg'[39m
+    },
+    {
+      id: [33m9[39m,
+      email: [32m'tobias.funke@reqres.in'[39m,
+      first_name: [32m'Tobias'[39m,
+      last_name: [32m'Funke'[39m,
+      avatar: [32m'https://reqres.in/img/faces/9-image.jpg'[39m
+    },
+    {
+      id: [33m10[39m,
+      email: [32m'byron.fields@reqres.in'[39m,
+      first_name: [32m'Byron'[39m,
+      last_name: [32m'Fields'[39m,
+      avatar: [32m'https://reqres.in/img/faces/10-image.jpg'[39m
+    },
+    {
+      id: [33m11[39m,
+      email: [32m'george.edwards@reqres.in'[39m,
+      first_name: [32m'George'[39m,
+      last_name: [32m'Edwards'[39m,
+      avatar: [32m'https://reqres.in/img/faces/11-image.jpg'[39m
+    },
+    {
+      id: [33m12[39m,
+      email: [32m'rachel.howell@reqres.in'[39m,
+      first_name: [32m'Rachel'[39m,
+      last_name: [32m'Howell'[39m,
+      avatar: [32m'https://reqres.in/img/faces/12-image.jpg'[39m
+    }
+  ],
+  support: {
+    url: [32m'https://reqres.in/#support-heading'[39m,
+    text: [32m'To keep ReqRes free, contributions towards server costs are appreciated!'[39m
+  }
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Create user" classname="APITest.spec.js" time="0.224">
 <system-out>
 <![CDATA[{
   name: [32m'zaheu'[39m,
   job: [32m'vames'[39m,
-  id: [32m'548'[39m,
-  createdAt: [32m'2024-03-20T19:51:10.093Z'[39m
+  id: [32m'332'[39m,
+  createdAt: [32m'2024-04-01T16:45:00.999Z'[39m
 }
 ]]>
 </system-out>
+</testcase>
+<testcase name="Update user" classname="APITest.spec.js" time="0.218">
+<system-out>
+<![CDATA[{ name: [32m'zaheu'[39m, job: [32m'qa'[39m, updatedAt: [32m'2024-04-01T16:45:01.214Z'[39m }
+]]>
+</system-out>
+</testcase>
+<testcase name="Delete user" classname="APITest.spec.js" time="0.176">
 </testcase>
 </testsuite>
 </testsuites>
