@@ -36,6 +36,8 @@ npx playwright test MyTest.spec.js --project=chromium --headed --debug
 
 ### Locating Elements in Playwright
 
+<img src="https://i.postimg.cc/wTFt0sS2/Screenshot-1.png">
+
 #### Locate single element
 
 
