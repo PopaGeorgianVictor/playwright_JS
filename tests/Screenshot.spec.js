@@ -17,7 +17,7 @@ test('Full page screenshot', async ({ page }) => {
 })
 
 
-test.only('Element screenshot', async ({ page }) => {
+test('Element screenshot', async ({ page }) => {
 
     await page.goto('https://demo.opencart.com/') 
     await page.locator('//*[@id="content"]/div[2]/div[1]/form/div').screenshot({path: 'tests/screenshots/ ' + Date.now() + 'Element.png'})

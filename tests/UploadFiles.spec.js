@@ -11,7 +11,7 @@ await page.locator('#file-upload').setInputFiles('tests/upload/test1.txt')
 
 })
 
-test.only('Multiple Files', async ({page})=>{
+test('Multiple Files', async ({page})=>{
 
     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php')
     await page.locator('#filesToUpload').setInputFiles(['tests/upload/test1.txt' , 'tests/upload/test2.txt'])
