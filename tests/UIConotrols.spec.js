@@ -20,7 +20,7 @@ test('Browser Context-Validating Error Login', async ({page})=>{
 
 })
 
-test.only('Child windows handl', async ({browser})=>{
+test.only('Child windows hand', async ({browser})=>{
 
     const context = await browser.newContext()
     const page = await context.newPage()
