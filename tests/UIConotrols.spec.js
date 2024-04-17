@@ -24,6 +24,7 @@ test.only('Child windows handl', async ({browser})=>{
 
     const context = await browser.newContext()
     const page = await context.newPage()
+    const userName = page.locator('#username')
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     const documentLink = page.locator("[href*='documents-request']")
 
@@ -40,6 +41,12 @@ test.only('Child windows handl', async ({browser})=>{
             const arrayText = text.split("@")  
             const domain = arrayText[1].split(" ")[0] // [0] - rahulshettyacademy.com [1] - with [2] - below etc.
             console.log(domain)
+
+            // navigate to parent page and fill with 'domain'
+            await userName.fill(domain)
+           
+
+           
 
 
 
