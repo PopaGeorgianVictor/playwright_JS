@@ -20,7 +20,7 @@ test('Browser Context-Validating Error Login', async ({page})=>{
 
 })
 
-test.only('Child windows hand', async ({browser})=>{
+test.only('Child windows handl', async ({browser})=>{
 
     const context = await browser.newContext()
     const page = await context.newPage()
@@ -35,6 +35,11 @@ test.only('Child windows hand', async ({browser})=>{
         ])
             const text = await newPage.locator(".red").textContent()
             console.log(text)
+
+            // Please email us at mentor@rahulshettyacademy.com with below template to receive response - extract just rahulshettyacademy.com
+            const arrayText = text.split("@")  
+            const domain = arrayText[1].split(" ")[0] // [0] - rahulshettyacademy.com [1] - with [2] - below etc.
+            console.log(domain)
 
 
 
