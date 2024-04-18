@@ -24,7 +24,10 @@ test.only('Browser Context-Validating Error Login', async ({page})=>{
         }
     }
 
-    
+    await page.locator("[routerlink*='cart']").click()
+    await page.locator("div li").first().waitFor()
+    const bool = await page.locator("h3:has-text('Zara Coat 3')").isVisible()
+    expect(bool).toBeTruthy()
 
    // await page.pause()
 
