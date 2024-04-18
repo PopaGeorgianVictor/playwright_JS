@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test')
 
 
-test('Browser Context-Validating Error Login', async ({page})=>{
+test.only('Browser Context-Validating Error Login', async ({page})=>{
 
+    const productName = 'Zara Coat 3'
     const products = page.locator(".card-body")
     await page.goto("https://rahulshettyacademy.com/client")
     await page.locator("#userEmail").fill("anshika@gmail.com")
@@ -15,10 +16,19 @@ test('Browser Context-Validating Error Login', async ({page})=>{
     const count = await products.count()
     for(let i=0; i < count ; ++i)
     {
-        products.nth(i)
+        if(await products.nth(i).locator("b").textContent() === productName)
+        {
+            //add to cart
+          await  products.nth(i).locator("text= Add to Cart").click()
+          break
+        }
     }
 
-    await page.waitForTimeout(3000)
+    
+
+   // await page.pause()
+
+   // await page.waitForTimeout(3000)
 
 
 })
