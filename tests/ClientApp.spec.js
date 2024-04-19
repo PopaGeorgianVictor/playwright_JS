@@ -30,8 +30,19 @@ test.only('Browser Context-Validating Error Login', async ({page})=>{
     expect(bool).toBeTruthy()
     await page.locator("text=Checkout").click()
     await page.locator("[placeholder*='Country']").fill("ind", {delay: 100}) // delay typing to show up suggestions (slow down typing)
-    const options= page.locator(".ta-results") //select Country
- 
+    const dropdown = page.locator(".ta-results") //select Country
+    await dropdown.waitFor()
+    optionCount = dropdown.locator("button").locator("buttton").count()
+    for (let i = 0; i< optionsCount; ++i)
+    {
+      text = await dropdown.locator("button").nth(i).textContent()
+      if(text === "India")
+      {
+        await dropdown.locator("button").nth(i).click()
+        break
+      }
+    }
+  
    // await page.pause()
 
    // await page.waitForTimeout(3000)
