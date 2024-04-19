@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
 
 
-test.only('Browser Context-Validating Error Login', async ({page})=>{
+test.only('ClientApp', async ({page})=>{
 
     const email = "anshika@gmail.com"
     const productName = 'ADIDAS ORIGINAL'
@@ -50,6 +50,22 @@ test.only('Browser Context-Validating Error Login', async ({page})=>{
     await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ")
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent()
     console.log(orderId)
+    await page.locator("button[routerlink*='myorders']").click()
+    await page.locator("tbody").waitFor() //wait until the table order showing up
+    const rows = await page.locator("tbody tr")
+
+    for(let i = 0; i < await rows.count(); ++i)
+    {
+      const roworderId =await  rows.nth(i).locator("th").textContent() //grab orderid for product added to cart
+      if (orderId.includes(roworderId))
+      {
+        await rows.nth(i).locator("button").first().click() //click on view order, open the view details
+        break
+      }
+    }
+
+    const orderIdDetails = await page.locator(".col-text").textContent()
+    expect(orderId.includes(orderIdDetails)).toBeTruthy()
 
   
    // await page.pause()
