@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
 
 
-test.only('ClientApp', async ({page})=>{
+test('ClientApp', async ({page})=>{
 
     const email = "anshika@gmail.com"
     const productName = 'ADIDAS ORIGINAL'
