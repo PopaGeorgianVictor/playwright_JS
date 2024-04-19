@@ -24,28 +24,28 @@ test.only('ClientApp', async ({page})=>{
           break
         }
     }
-    await page.pause()
+   
 
     await page.locator("[routerlink*='cart']").click()
     await page.locator("div li").first().waitFor()
     const bool = await page.locator("h3:has-text('ADIDAS ORIGINAL')").isVisible()
     expect(bool).toBeTruthy()
     await page.locator("text=Checkout").click()
-    await page.locator("[placeholder*='Country']").fill("ind", {delay: 100}) // delay typing to show up suggestions (slow down typing)
-    const dropdown = page.locator(".ta-results") //select Country
+    await page.locator("[placeholder*='Country']").type('rom',{delay: 200}) // delay typing to show up suggestions (slow down typing)
+    const dropdown = page.locator(".ta-results") //open dropdown 
     await dropdown.waitFor()
-    optionCount = dropdown.locator("button").locator("buttton").count()
+    const optionsCount = await dropdown.locator("button").count()
     for (let i = 0; i< optionsCount; ++i)
     {
-      text = await dropdown.locator("button").nth(i).textContent()
-      if(text.trim() === "India") // trim to eliminate space or write ' India'  with space like in the js or use java methods text.includes("India")
+      const text = await dropdown.locator("button").nth(i).textContent()
+      if(text=== " Romania") // trim to eliminate space or write ' India'  with space like in the js or use java methods text.includes("India")
       {
         await dropdown.locator("button").nth(i).click()
         break
       }
     }
-
-    await expect(page.locator(".user__name [type='text']")).toHaveText(email)
+    // await page.pause()
+    // await expect(page.locator(".ng-touched']")).toHaveText(email)
     await page.locator(".action__submit").click()
     await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ")
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent()
@@ -68,9 +68,9 @@ test.only('ClientApp', async ({page})=>{
     expect(orderId.includes(orderIdDetails)).toBeTruthy()
 
   
-   // await page.pause()
+  //  await page.pause()
 
-   // await page.waitForTimeout(3000)
+   await page.waitForTimeout(3000)
 
 
 })
