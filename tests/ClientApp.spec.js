@@ -28,7 +28,10 @@ test.only('Browser Context-Validating Error Login', async ({page})=>{
     await page.locator("div li").first().waitFor()
     const bool = await page.locator("h3:has-text('Zara Coat 3')").isVisible()
     expect(bool).toBeTruthy()
-
+    await page.locator("text=Checkout").click()
+    await page.locator("[placeholder*='Country']").fill("ind", {delay: 100}) // delay typing to show up suggestions (slow down typing)
+    const options= page.locator(".ta-results") //select Country
+ 
    // await page.pause()
 
    // await page.waitForTimeout(3000)
