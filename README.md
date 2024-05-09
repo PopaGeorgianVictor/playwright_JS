@@ -211,4 +211,11 @@ allure generate my-allure-results-o allure-report --clean
 6) Open Allure Report:
 allure open allure-report
 ```
+## const / let
+```py
+when declare **const** is required to declare value also(when is initializing)
+**let** is use to declare global variable
+```
+
+
 
