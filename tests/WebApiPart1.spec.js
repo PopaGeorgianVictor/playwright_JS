@@ -17,20 +17,20 @@ test.beforeAll ( async() =>
     // console.log(token)
 
 
-    const orderResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order",
-    {
-      data : orderPayload,
-      headers: {
-              'Authorization': token,
-              'Content-Type': 'application/json'
-      },
-    })
-   const orderResponseJson =  await orderResponse.json()
-   console.log(orderResponseJson)
-   orderId = orderResponseJson.orders[0]
+//     const orderResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order",
+//     {
+//       data : orderPayload,
+//       headers: {
+//               'Authorization': token,
+//               'Content-Type': 'application/json'
+//       },
+//     })
+//    const orderResponseJson =  await orderResponse.json()
+//    console.log(orderResponseJson)
+//    orderId = orderResponseJson.orders[0]
 
 
-})
+// })
 
 // test.beforeEach ( () =>
 
@@ -44,8 +44,8 @@ test.beforeAll ( async() =>
 
 test.only('Place the order', async ({page})=>{
 
-  const ApiUtils = new ApiUtils(apiContext)
-  const orderId = createOrder()
+  const ApiUtils = new ApiUtils(apiContext,loginPayLoad)
+  const orderId = createOrder(orderPayload)
   await page.addInitScript(value => {
   window.localStorage.setItem('token',value) // script take 2 argument , first si function , second is parameter
 
