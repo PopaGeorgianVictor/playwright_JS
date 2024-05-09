@@ -54,7 +54,7 @@ await page.locator('locator').fill('value')
 await page.locator('locator').type('value')
 await page.fill('locator', 'value')
 await page.type('locator', 'value')
-❗await is required only when performing the actual action
+❗await is required only when performing the actual action / whenever calling a playwright method
 ```
 
 #### Locate multiple web elements
