@@ -1,12 +1,13 @@
 const { test, expect, request } = require('@playwright/test')
 
 const loginPayLoad = {userEmail: "anshika@gmail.com", userPassword: "Iamking@000"}
+const orderPayload ={"orders":[{"country":"Cameroon","productOrderedId":"6581ca979fd99c85e8ee7faf"}]}
 let token
 
 test.beforeAll ( async() =>
 
 {
-
+    // Login API
     const apiContext = await request.newContext()
     const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login" ,{data:loginPayLoad})
     expect(loginResponse.ok()).toBeTruthy()
@@ -14,6 +15,11 @@ test.beforeAll ( async() =>
     token = loginResponseJson.token
     console.log(token)
 
+
+    apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order"
+    {
+
+    })
 
 })
 
@@ -27,7 +33,7 @@ test.beforeAll ( async() =>
 
 
 
-test('Place the order', async ({page})=>{
+test.only('Place the order', async ({page})=>{
 
  await page.addInitScript(value => {
 
@@ -101,3 +107,6 @@ test('Place the order', async ({page})=>{
 
 
 })
+
+// Verify if order created is swoing in history page
+// Precondition - create order 
