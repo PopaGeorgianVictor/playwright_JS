@@ -44,7 +44,7 @@ test.beforeAll ( async() =>
 
 test.only('Place the order', async ({page})=>{
 
-  ApiUtils = new ApiUtils()
+  const ApiUtils = new ApiUtils(apiContext)
   const orderId = createOrder()
   await page.addInitScript(value => {
   window.localStorage.setItem('token',value) // script take 2 argument , first si function , second is parameter
