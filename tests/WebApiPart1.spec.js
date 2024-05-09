@@ -1,19 +1,18 @@
 const { test, expect, request } = require('@playwright/test')
 
-const loginPayLoad = {userEmail:"anshika@gmail.com",userPassword:"Iamking@000"}
+const loginPayLoad = {userEmail: "anshika@gmail.com", userPassword: "Iamking@000"}
+let token
 
 test.beforeAll ( async() =>
 
 {
 
-    const apiContext = request.newContext()
-    const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login" ,
-    {
-        data:loginPayLoad
-    } )
+    const apiContext = await request.newContext()
+    const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login" ,{data:loginPayLoad})
     expect(loginResponse.ok()).toBeTruthy()
-    const loginResponseJson = loginResponse.json()
-    const token = loginResponseJson.token()
+    const loginResponseJson = await loginResponse.json()
+    token = loginResponseJson.token
+    console.log(token)
 
 
 })
@@ -28,16 +27,26 @@ test.beforeEach ( () =>
 
 
 
-test('ClientApp', async ({page})=>{
+test('Place the order', async ({page})=>{
+
+ page.addInitScript(value => {
+
+  window.localStorage.setItem('token',value) // script take 2 argument , first si function , second is parameter
+
+ }, token) // token is a key-value pair , value is argument , token is a second argument
+  
+
+   
+    // await page.goto("https://rahulshettyacademy.com/client/")
+    // await page.locator("#userEmail").fill(email)
+    // await page.locator("#userPassword").fill("Iamking@000")
+    // await page.locator("[value='Login']").click()
+    // await page.waitForLoadState('networkidle')
 
     const email = "anshika@gmail.com"
     const productName = 'ADIDAS ORIGINAL'
-    const products = page.locator(".card-body")
     await page.goto("https://rahulshettyacademy.com/client/")
-    await page.locator("#userEmail").fill(email)
-    await page.locator("#userPassword").fill("Iamking@000")
-    await page.locator("[value='Login']").click()
-    await page.waitForLoadState('networkidle')
+    const products = page.locator(".card-body")
 
     const titles = await page.locator(".card-body b").allTextContents()
     console.log(titles)
