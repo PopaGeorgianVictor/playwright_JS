@@ -46,7 +46,7 @@ test.beforeAll ( async() =>
 
 //create order is success
 
-test.only('Place the order', async ({page})=>{
+test('Place the order', async ({page})=>{
 
   // const ApiUtils = new ApiUtils(apiContext,loginPayLoad)
   // const orderId = createOrder(orderPayload)

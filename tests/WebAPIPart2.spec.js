@@ -1,19 +1,30 @@
 const { test, expect } = require('@playwright/test')
 let webContext
 
-test('ClientApp', async ({page})=>{
+
+test.beforeAll (async({browser}) =>
+
+    {
+        const context = await browser.newContext()
+        const page = await context.newPage()
+        await page.goto("https://rahulshettyacademy.com/client/")
+        await page.locator("#userEmail").fill(email)
+        await page.locator("#userPassword").fill("Iamking@000")
+        await page.locator("[value='Login']").click()
+        await page.waitForLoadState('networkidle')
+        await context.storageState({path: 'state.json'})
+        webContext = await browser.newContext({storageState:'state.json'})
+
+
+    })
+
+
+test.only('ClientApp', async ({page})=>{
 
     const email = "anshika@gmail.com"
     const productName = 'ADIDAS ORIGINAL'
     const products = page.locator(".card-body")
-
-    webContext.
-
-    await page.goto("https://rahulshettyacademy.com/client/")
-    await page.locator("#userEmail").fill(email)
-    await page.locator("#userPassword").fill("Iamking@000")
-    await page.locator("[value='Login']").click()
-    await page.waitForLoadState('networkidle')
+  
 
     const titles = await page.locator(".card-body b").allTextContents()
     console.log(titles)
