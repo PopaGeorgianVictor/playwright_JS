@@ -1,7 +1,8 @@
 const { test, expect, request } = require('@playwright/test')
+const {APiUtils} = require('./utils/APIUtils')
 
-const loginPayLoad = {userEmail: "anshika@gmail.com", userPassword: "Iamking@000"}
-const orderPayload ={"orders":[{country:"Romania",productOrderedId:"6581ca979fd99c85e8ee7faf"}]}
+// const loginPayLoad = {userEmail: "anshika@gmail.com", userPassword: "Iamking@000"}
+// const orderPayload ={"orders":[{country:"Romania",productOrderedId:"6581ca979fd99c85e8ee7faf"}]}
 let token
 let orderId
 
@@ -10,6 +11,11 @@ test.beforeAll ( async() =>
 {
     // Login API
     const apiContext = await request.newContext()
+    const apiUtils = new APiUtils(apiContext,loginPayLoad)
+    apiUtils.createOrder(orderPayload)
+
+
+
     // const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login" ,{data:loginPayLoad})
     // expect(loginResponse.ok()).toBeTruthy()
     // const loginResponseJson = await loginResponse.json()
@@ -32,11 +38,8 @@ test.beforeAll ( async() =>
 
 // })
 
-// test.beforeEach ( () =>
 
-// {
-
-// })
+})
 
 
 

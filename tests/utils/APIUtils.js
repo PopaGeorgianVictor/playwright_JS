@@ -9,7 +9,7 @@ class APIUtils
 
    async getToken()
         {
-            const loginResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login" ,{data:loginPayLoad})
+            const loginResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login" ,{data:this.loginPayLoad})
             const loginResponseJson = await loginResponse.json()
             token = loginResponseJson.token
             console.log(token)
@@ -35,4 +35,4 @@ class APIUtils
 
         }
 }
-module.exports = {APIUtils} // now class is globaly visivle to all the files 
+module.exports = {APIUtils} // now class is globaly visible to all the files 
