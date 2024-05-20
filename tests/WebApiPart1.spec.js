@@ -1,18 +1,19 @@
 const { test, expect, request } = require('@playwright/test')
-const {APiUtils} = require('./utils/APIUtils')
+const {APIUtils} = require('./utils/APIUtils')
 
-// const loginPayLoad = {userEmail: "anshika@gmail.com", userPassword: "Iamking@000"}
-// const orderPayload ={"orders":[{country:"Romania",productOrderedId:"6581ca979fd99c85e8ee7faf"}]}
-let token
-let orderId
+const loginPayLoad = {userEmail: "anshika@gmail.com", userPassword: "Iamking@000"}
+const orderPayload ={"orders":[{country:"Romania",productOrderedId:"6581ca979fd99c85e8ee7faf"}]}
+// let token
+// let orderId
+let response
 
 test.beforeAll ( async() =>
 
 {
     // Login API
     const apiContext = await request.newContext()
-    const apiUtils = new APiUtils(apiContext,loginPayLoad)
-    apiUtils.createOrder(orderPayload)
+    const apiUtils = new APIUtils(apiContext,loginPayLoad)
+    response = await apiUtils.createorder(orderPayload)
 
 
 
@@ -47,12 +48,12 @@ test.beforeAll ( async() =>
 
 test.only('Place the order', async ({page})=>{
 
-  const ApiUtils = new ApiUtils(apiContext,loginPayLoad)
-  const orderId = createOrder(orderPayload)
+  // const ApiUtils = new ApiUtils(apiContext,loginPayLoad)
+  // const orderId = createOrder(orderPayload)
   await page.addInitScript(value => {
-  window.localStorage.setItem('token',value) // script take 2 argument , first si function , second is parameter
+  window.localStorage.setItem('token',value) // script take 2 argument , first is function , second is parameter
 
- }, token) // token is a key-value pair , value is argument , token is a second argument
+ }, response.token) // token is a key-value pair , value is argument , token is a second argument
   
     await page.goto("https://rahulshettyacademy.com/client/")
     await page.locator("button[routerlink*='myorders']").click()
@@ -62,7 +63,7 @@ test.only('Place the order', async ({page})=>{
     for(let i = 0; i < await rows.count(); ++i)
     {
       const roworderId =await  rows.nth(i).locator("th").textContent() //grab orderid for product added to cart
-      if (orderId.includes(roworderId))
+      if (response.orderId.includes(roworderId))
       {
         await rows.nth(i).locator("button").first().click() //click on view order, open the view details
         break
@@ -70,7 +71,7 @@ test.only('Place the order', async ({page})=>{
     }
 
     const orderIdDetails = await page.locator(".col-text").textContent()
-    expect(orderId.includes(orderIdDetails)).toBeTruthy()
+    expect(response.orderId.includes(orderIdDetails)).toBeTruthy()
 
   
   //  await page.pause()
