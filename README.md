@@ -218,5 +218,25 @@ when declare **const** is required to declare value also(when is initializing)
 **let** is use to declare global variable
 ```
 
+## Debug
+
+```py
+npx playwright test "name test" --debug (open pw inspector and debug only UI)
+```
+
+### If you want debug api calls
+
+```py
+ 1. in VS go to package.json create a test property and give the command
+     "scripts": { "test": "npx playwright test "name test" }
+ 2. in VS tipe Shift + Ctrl + P and click on method Debug: Debug npm Script
+```
+
+
+
+
+
+
+
 
 
