@@ -7,7 +7,6 @@ test('ClientApp', async ({page})=>{
     const productName = 'ADIDAS ORIGINAL'
     const products = page.locator(".card-body")
 
-    webContext.
 
     await page.goto("https://rahulshettyacademy.com/client/")
     await page.locator("#userEmail").fill(email)

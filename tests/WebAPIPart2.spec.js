@@ -1,10 +1,11 @@
 const { test, expect } = require('@playwright/test')
+const email = "anshika@gmail.com"
 let webContext
 
 
 test.beforeAll (async({browser}) =>
 
-    {
+    {   
         const context = await browser.newContext()
         const page = await context.newPage()
         await page.goto("https://rahulshettyacademy.com/client/")
@@ -19,13 +20,13 @@ test.beforeAll (async({browser}) =>
     })
 
 
-test.only('ClientApp', async ({page})=>{
+test.only('ClientApp', async ()=>{
 
-    const email = "anshika@gmail.com"
+    
     const productName = 'ADIDAS ORIGINAL'
+    const page = await webContext.newPage()
+    await page.goto("https://rahulshettyacademy.com/client/")
     const products = page.locator(".card-body")
-  
-
     const titles = await page.locator(".card-body b").allTextContents()
     console.log(titles)
     const count = await products.count()
