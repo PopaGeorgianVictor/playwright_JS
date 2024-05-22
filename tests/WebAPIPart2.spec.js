@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test')
 const email = "anshika@gmail.com"
 let webContext
 
-
+ 
 test.beforeAll (async({browser}) =>
 
     {   
@@ -20,7 +20,7 @@ test.beforeAll (async({browser}) =>
     })
 
 
-test.only('ClientApp', async ()=>{
+test('ClientApp', async ()=>{
 
     
     const productName = 'ADIDAS ORIGINAL'
