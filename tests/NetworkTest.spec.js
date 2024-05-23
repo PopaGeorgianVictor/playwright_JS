@@ -21,7 +21,7 @@ test.beforeAll ( async() =>
 
 //create order is success
 
-test.only('Place the orderrrrr', async ({page})=>{
+test('Place the orderrrrr', async ({page})=>{
 
   await page.addInitScript(value => {
   window.localStorage.setItem('token',value) // script take 2 argument , first is function , second is parameter
