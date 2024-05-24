@@ -20,6 +20,7 @@ async validLogin(userName,password)
         await this.userName.fill(userName)
         await this.password.fill(password)
         await this.signInbutton.click()
+        await this.page.waitForLoadState('networkidle')
     }
 
 

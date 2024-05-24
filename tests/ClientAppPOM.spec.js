@@ -1,5 +1,6 @@
 const { test, expect } = require('@playwright/test')
 const {LoginPage} =  require('../pageobjects/LoginPage')
+const {DashboardPage} =  require('../pageobjects/DashboardPage')
 let webContext
 
 test('ClientApp', async ({page})=>{
@@ -10,24 +11,12 @@ test('ClientApp', async ({page})=>{
     const productName = 'ADIDAS ORIGINAL'
     const products = page.locator(".card-body")
     const loginPage = new LoginPage(page)
-    loginPage.goTo()
-    loginPage.validLogin(userName,password)
-    await page.waitForLoadState('networkidle')
-    const titles = await page.locator(".card-body b").allTextContents()
-    console.log(titles)
-    const count = await products.count()
-    for(let i=0; i < count ; ++i)
-    {
-        if(await products.nth(i).locator("b").textContent() === productName)
-        {
-            //add to cart
-          await  products.nth(i).locator("text= Add to Cart").click()
-          break
-        }
-    }
-   
-
-    await page.locator("[routerlink*='cart']").click()
+    await loginPage.goTo()
+    await loginPage.validLogin(userName,password)
+    const dashboardPage = new DashboardPage(page)
+    await dashboardPage.searchProductAddCart(productName)
+    await dashboardPage.navigateToCart()
+  
     await page.locator("div li").first().waitFor()
     const bool = await page.locator("h3:has-text('ADIDAS ORIGINAL')").isVisible()
     expect(bool).toBeTruthy()
