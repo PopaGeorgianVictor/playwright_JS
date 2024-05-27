@@ -1,19 +1,19 @@
 const { test, expect } = require('@playwright/test')
-const {LoginPage} =  require('../pageobjects/LoginPage')
-const {DashboardPage} =  require('../pageobjects/DashboardPage')
-let webContext
+const {POManager} =  require('../pageobjects/POManager')
+
 
 test('ClientApp', async ({page})=>{
 
   //js file - Login js, DashboardPage
+    const poManager = new POManager(page)
     const userName = "anshika@gmail.com"
     const password = "Iamking@000"
     const productName = 'ADIDAS ORIGINAL'
     const products = page.locator(".card-body")
-    const loginPage = new LoginPage(page)
+    const loginPage = poManager.getLoginPage()
     await loginPage.goTo()
     await loginPage.validLogin(userName,password)
-    const dashboardPage = new DashboardPage(page)
+    const dashboardPage = poManager.getDashboardPage()
     await dashboardPage.searchProductAddCart(productName)
     await dashboardPage.navigateToCart()
   
