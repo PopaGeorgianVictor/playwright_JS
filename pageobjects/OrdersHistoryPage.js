@@ -1,23 +1,25 @@
+const { expect } = require("@playwright/test")
+
 class OrdersHistoryPage
 {
 constructor(page)
 {
-    this.page = page;
-this.ordersTable = page.locator("tbody");
-this.rows = page.locator("tbody tr");
-this.orderdIdDetails =page.locator(".col-text");
+this.page = page
+this.ordersTable = page.locator("tbody")
+this.rows = page.locator("tbody tr")
+this.orderdIdDetails =page.locator(".col-text")
 }
 async searchOrderAndSelect(orderId)
 {
 
-    await this.ordersTable.waitFor();
+    await this.ordersTable.waitFor()
 for(let i =0; i<await this.rows.count(); ++i)
  {
-    const rowOrderId =await this.rows.nth(i).locator("th").textContent();
+    const rowOrderId =await this.rows.nth(i).locator("th").textContent()
     if (orderId.includes(rowOrderId))
     {
-        await this.rows.nth(i).locator("button").first().click();
-        break;
+        await this.rows.nth(i).locator("button").first().click()
+        break
     }
  }
 
@@ -25,8 +27,8 @@ for(let i =0; i<await this.rows.count(); ++i)
 
 async getOrderId()
 {
-    return await this.orderdIdDetails.textContent();
+    return await this.orderdIdDetails.textContent()
 }
 
 }
-module.exports = {OrdersHistoryPage};
+module.exports = {OrdersHistoryPage}
