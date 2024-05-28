@@ -3,7 +3,9 @@ const {POManager} =  require('../pageobjects/POManager')
 const dataset = JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json"))) //json ->convert to string ->convert to js object
 
 
-test('ClientApp', async ({page})=>{
+for(const data of dataset)
+  {
+    test(`ClientAppPom for ${data.productName}`, async ({page})=>{ //give test different name for every test each
 
   const poManager = new POManager(page)
   //js file- Login js, DashboardPage
@@ -11,23 +13,24 @@ test('ClientApp', async ({page})=>{
    const products = page.locator(".card-body")
    const loginPage = poManager.getLoginPage()
    await loginPage.goTo()
-   await loginPage.validLogin(dataset.username,dataset.password)
+   await loginPage.validLogin(data.username,data.password)
    const dashboardPage = poManager.getDashboardPage()
-   await dashboardPage.searchProductAddCart(dataset.productName)
+   await dashboardPage.searchProductAddCart(data.productName)
    await dashboardPage.navigateToCart()
 
   const cartPage = poManager.getCartPage()
-  await cartPage.VerifyProductIsDisplayed(dataset.productName)
+  await cartPage.VerifyProductIsDisplayed(data.productName)
   await cartPage.Checkout()
 
   const ordersReviewPage = poManager.getOrdersReviewPage()
   await ordersReviewPage.searchCountryAndSelect("rom","Romania")
   const orderId = await ordersReviewPage.SubmitAndGetOrderId()
- console.log(orderId)
- await dashboardPage.navigateToOrders()
- const ordersHistoryPage = poManager.getOrdersHistoryPage()
- await ordersHistoryPage.searchOrderAndSelect(orderId)
- expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy()
+  console.log(orderId)
+  await dashboardPage.navigateToOrders()
+  const ordersHistoryPage = poManager.getOrdersHistoryPage()
+  await ordersHistoryPage.searchOrderAndSelect(orderId)
+  expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy()
 
 
 })
+}
