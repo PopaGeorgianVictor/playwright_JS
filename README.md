@@ -231,7 +231,9 @@ npx playwright test "name test" --debug (open pw inspector and debug only UI)
      "scripts": { "test": "npx playwright test "name test" }
  2. in VS tipe Shift + Ctrl + P and click on method Debug: Debug npm Script
 ```
+### Playwright Framework Features
 
+<img src="https://i.postimg.cc/HkBWrshc/pwframework.png">
 
 
 
